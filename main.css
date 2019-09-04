@@ -1,1 +1,8 @@
 body {background-color: darkseagreen;}
+
+.card-img-top {
+    max-height: 250px;
+}
+.card {
+    margin: 1em 0;
+}
