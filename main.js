@@ -64,3 +64,29 @@ const cardBuilder = (pieArr) => {
     printToDom("pie-zone", domString);
 }
 cardBuilder(pies);
+
+const buttonClick = (e) => {
+    //figure out who the instructor is for the button we clicked
+    const instructor = e.target.id
+    const selectedPies = []
+    //then figure out how to only get those pies from the list of all the pies
+    for (let i = 0; i < pies.length; i++) {
+        const pie = pies[i]
+        if (pie.instructor === instructor) {
+            selectedPies.push(pie)
+        }
+    }  
+    if (instructor === 'all') { cardBuilder(pies);
+    } else {
+    cardBuilder(selectedPies);
+    }
+    }
+
+document.getElementById('zoe').addEventListener('click', buttonClick) 
+
+document.getElementById('michael').addEventListener('click', buttonClick)
+
+
+document.getElementById('callan').addEventListener('click', buttonClick)
+
+document.getElementById('all').addEventListener('click', buttonClick)
